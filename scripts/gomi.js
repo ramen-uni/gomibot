@@ -13,7 +13,6 @@ module.exports = (robot) => {
       const imageBytes = fs.readFileSync(path, { encoding: "base64" }); // ファイルを読み込んでbase64エンコード
       stub.PostModelOutputs( // Clarifai APIの呼び出し
         {
-          // This is the model ID of a publicly available General model. You may use any other public or custom model ID.
           model_id: "trash-judge",  // 画像認識モデルのIDを指定
           inputs: [{ data: { image: { base64: imageBytes } } }]  // base64エンコードした画像データを入力として設定
         },
